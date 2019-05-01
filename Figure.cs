@@ -25,6 +25,17 @@ namespace ScreenSaver
 
         static Pixel min;
         static Pixel max;
+        static Random rand = new Random();
+
+        public static Figure RandomFigure()
+        {
+            Figure f = new Figure(
+                rand.Next(min.x, max.x),
+                rand.Next(min.y, max.y),
+                rand.Next(1, 6) * (rand.Next(0, 2) == 0 ? 1 : -1),
+                rand.Next(1, 6) * (rand.Next(0, 2) == 0 ? 1 : -1));
+            return f;
+        }
 
         public Pixel GetPixel()
         {

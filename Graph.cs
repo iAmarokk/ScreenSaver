@@ -18,6 +18,23 @@ namespace ScreenSaver
             InitPens();
         }
 
+        public void SetColors(Color back, Color fore)
+        {
+            colorBack = back;
+            colorFore = fore;
+            InitPens();
+        }
+        
+        public Color GetBackColor()
+        {
+            return colorBack;
+        }
+
+        public Color GetForeColor()
+        {
+            return colorFore;
+        }
+
         private void InitPens()
         {
             penBack = new Pen(colorBack, (float)2.0);
